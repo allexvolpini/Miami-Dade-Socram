@@ -633,4 +633,21 @@ footer {
     top: 15px;
     right: 20px;
   }
+  /* Correção de clique e usabilidade touch para dispositivos móveis */
+  .galeria-item {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  .galeria-item img {
+    pointer-events: none; /* Garante que o toque passe direto para o container .galeria-item */
+  }
+
+  .lightbox-prev,
+  .lightbox-next,
+  .lightbox-close {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
 }
