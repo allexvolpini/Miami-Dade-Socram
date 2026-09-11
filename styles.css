@@ -419,9 +419,9 @@ header {
 .foto-comissao {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 20%;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
@@ -763,8 +763,8 @@ footer {
   .foto-comissao {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
-    object-position: center top;
+    aspect-ratio: 4 / 3;
+    object-position: center 20%;
   }
 
   .grid-galeria {
