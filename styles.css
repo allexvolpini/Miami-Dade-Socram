@@ -70,8 +70,7 @@ html {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.02em;
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
