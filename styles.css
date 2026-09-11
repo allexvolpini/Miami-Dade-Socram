@@ -565,6 +565,22 @@ footer {
   font-size: 0.8rem;
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
 /* --- BOTÃO FLUTUANTE WHATSAPP --- */
 .whatsapp-float {
   position: fixed;
