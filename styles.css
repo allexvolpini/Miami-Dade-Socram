@@ -41,6 +41,18 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.whatsapp-float:focus-visible,
+.lightbox-prev:focus-visible,
+.lightbox-next:focus-visible,
+.lightbox-close:focus-visible,
+.site-nav a:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 3px;
+}
+
 html {
   scroll-padding-top: var(--header-offset);
 }
