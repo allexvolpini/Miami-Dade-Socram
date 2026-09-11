@@ -455,6 +455,11 @@ header {
   aspect-ratio: 1 / 1;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: none;
+  width: 100%;
+  display: block;
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
@@ -632,6 +637,10 @@ footer {
   font-weight: bold;
   cursor: pointer;
   z-index: 2010;
+  background: none;
+  border: none;
+  line-height: 1;
+  padding: 4px 8px;
   transition: color 0.2s;
 }
 

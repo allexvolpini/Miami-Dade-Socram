@@ -16,7 +16,7 @@
     />
 
     <!-- Arquivo CSS Externo com versão para limpar cache -->
-    <link rel="stylesheet" href="styles.css?v=3.0" />
+    <link rel="stylesheet" href="styles.css?v=3.1" />
   </head>
   <body>
     <!-- CABEÇALHO -->
@@ -209,36 +209,36 @@
           <p>Confira alguns momentos dos nossos treinos</p>
         </div>
         <div class="grid-galeria">
-          <div class="galeria-item" onclick="openLightbox(0)">
+          <button type="button" class="galeria-item" data-index="0">
             <img src="images/time1.jpg.jpg" alt="Troféu e Comemoração" />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(1)">
+          </button>
+          <button type="button" class="galeria-item" data-index="1">
             <img src="images/time2.jpg.jpg" alt="Equipe em Campo" />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(2)">
+          </button>
+          <button type="button" class="galeria-item" data-index="2">
             <img
               src="images/f8bca79a-5be5-454e-b945-20662b02797c.jpg"
               alt="Time com Troféu"
             />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(3)">
+          </button>
+          <button type="button" class="galeria-item" data-index="3">
             <img
               src="images/8b0ed094-bade-4448-b3f8-582f9a860824.jpg"
               alt="Treino Society"
             />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(4)">
+          </button>
+          <button type="button" class="galeria-item" data-index="4">
             <img
               src="images/f73b1dd9-9f6f-403f-a6e0-5795eef28054.jpg"
               alt="Atletas Infantil"
             />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(5)">
+          </button>
+          <button type="button" class="galeria-item" data-index="5">
             <img
               src="images/2dc29124-0d15-4ff8-91cf-891b5aba9d69.jpg"
               alt="Equipe Uniformizada"
             />
-          </div>
+          </button>
         </div>
       </div>
     </section>
@@ -302,8 +302,20 @@
     </a>
 
     <!-- MODAL DA GALERIA (LIGHTBOX) -->
-    <div id="lightbox-modal" class="lightbox">
-      <span class="lightbox-close" onclick="closeModal()">&times;</span>
+    <div
+      id="lightbox-modal"
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Foto ampliada"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        aria-label="Fechar"
+      >
+        &times;
+      </button>
       <button
         class="lightbox-prev"
         onclick="prevImage(event)"
@@ -324,6 +336,6 @@
     </div>
 
     <!-- Arquivo JavaScript com parâmetro para forçar atualização no celular -->
-    <script src="script.js?v=2.1"></script>
+    <script src="script.js?v=2.2"></script>
   </body>
 </html>
