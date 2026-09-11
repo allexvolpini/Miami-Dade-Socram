@@ -252,6 +252,35 @@ header {
   line-height: 1.2;
 }
 
+/* --- NA PRÁTICA --- */
+.na-pratica {
+  padding: 32px 0 8px;
+}
+
+.grid-pratica {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid #e2e8f0;
+  padding: 20px 24px;
+}
+
+.pratica-item strong {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pratica-item p {
+  font-size: 0.92rem;
+  color: var(--dark-text);
+  margin: 0;
+}
+
 /* --- SESSÃO SOBRE / METODOLOGIA --- */
 .sobre {
   padding: 45px 0 35px;
@@ -595,6 +624,10 @@ footer {
 
   .site-nav {
     display: none;
+  }
+
+  .grid-pratica {
+    grid-template-columns: 1fr;
   }
 
   .banner-parceria {
