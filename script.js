@@ -113,4 +113,33 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     observer.observe(finalCta);
   }
+
+  const header = document.querySelector("header");
+  if (header) {
+    let lastY = 0;
+    const showAfter = 72;
+    const delta = 6;
+
+    const onScroll = function () {
+      const y = window.scrollY || 0;
+      if (y <= showAfter) {
+        header.classList.remove("is-hidden");
+        lastY = y;
+        return;
+      }
+      if (y > lastY + delta) {
+        header.classList.add("is-hidden");
+      } else if (y < lastY - delta) {
+        header.classList.remove("is-hidden");
+      }
+      lastY = y;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    header.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        header.classList.remove("is-hidden");
+      });
+    });
+  }
 });

@@ -108,6 +108,18 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.28s ease;
+}
+
+header.is-hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header {
+    transition: none;
+  }
 }
 
 .nav-container {
@@ -403,39 +415,34 @@ header {
 }
 
 .grid-lideranca {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: center;
-}
-
-.fotos-equipe {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 28px;
 }
 
-.foto-marquinhos,
-.foto-comissao {
+.foto-marquinhos {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center 20%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
 
 .info-lideranca h2 {
   color: var(--primary-color);
-  margin-bottom: 12px;
-  font-size: 1.65rem;
+  margin-bottom: 16px;
+  font-size: 2rem;
+  line-height: 1.2;
 }
 
 .info-lideranca p {
-  margin-bottom: 12px;
-  font-size: 0.92rem;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: #334155;
+  max-width: 42rem;
 }
 
 /* --- GALERIA DE FOTOS --- */
@@ -743,28 +750,20 @@ footer {
   }
 
   .grid-lideranca {
-    grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .info-lideranca h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-lideranca p {
+    font-size: 1rem;
   }
 
   .bloco-metodologia {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .fotos-equipe {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-  }
-
-  .foto-marquinhos,
-  .foto-comissao {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-position: center 20%;
   }
 
   .grid-galeria {
