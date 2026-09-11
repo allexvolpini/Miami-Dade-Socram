@@ -1,11 +1,17 @@
 /* --- VARIÁVEIS DE COR E RESET --- */
 :root {
   --primary-color: #002d62;
+  --primary-dark: #001a3a;
   --secondary-color: #00a3e0;
   --accent-color: #ff6b00;
-  --light-bg: #f4f7fa;
-  --dark-text: #222222;
+  --light-bg: #f8fafc;
+  --dark-text: #1e293b;
+  --gray-muted: #64748b;
   --white: #ffffff;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -19,13 +25,15 @@ body {
   color: var(--dark-text);
   line-height: 1.5;
   background-color: var(--light-bg);
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
 h3 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 a {
@@ -40,11 +48,15 @@ a {
 
 /* --- BOTÕES --- */
 .btn {
-  display: inline-block;
-  padding: 15px 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
   border-radius: 50px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
@@ -53,34 +65,25 @@ a {
   text-align: center;
 }
 
-.btn-whatsapp {
-  background-color: #25d366;
-  color: var(--white);
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-}
-
-.btn-whatsapp:hover {
-  background-color: #1ebe5d;
-  transform: translateY(-2px);
-}
-
 .btn-secondary {
   background-color: var(--accent-color);
   color: var(--white);
+  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.35);
 }
 
 .btn-secondary:hover {
   background-color: #e05e00;
+  transform: translateY(-2px);
 }
 
 /* --- CABEÇALHO / HEADER --- */
 header {
-  background-color: var(--primary-color);
+  background-color: var(--primary-dark);
   padding: 12px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nav-container {
@@ -94,125 +97,182 @@ header {
   align-items: center;
   gap: 10px;
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 800;
+  line-height: 1;
 }
 
 .logo-img {
-  height: 40px;
-  width: auto;
+  height: 38px;
+  width: 38px;
+  object-fit: cover;
   border-radius: 50%;
+  border: 2px solid var(--secondary-color);
 }
 
 .logo span {
   color: var(--secondary-color);
 }
 
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .nav-socials a {
   color: var(--white);
-  font-size: 1.2rem;
-  margin-left: 15px;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.nav-socials a:hover {
+  color: var(--secondary-color);
 }
 
 /* --- HERO SECTION --- */
 .hero {
   background:
-    linear-gradient(rgba(0, 45, 98, 0.88), rgba(0, 45, 98, 0.88)),
+    linear-gradient(
+      180deg,
+      rgba(0, 45, 98, 0.92) 0%,
+      rgba(0, 26, 58, 0.95) 100%
+    ),
     url("images/f73b1dd9-9f6f-403f-a6e0-5795eef28054.jpg") center/cover
       no-repeat;
   color: var(--white);
-  padding: 60px 0 80px;
+  padding: 50px 0 65px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  line-height: 1.2;
+  font-size: 2rem;
+  line-height: 1.25;
+  margin-bottom: 14px;
 }
 
 .hero p {
-  font-size: 1.05rem;
-  max-width: 650px;
+  font-size: 1rem;
+  color: #e2e8f0;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-/* --- SESSÃO VALORES E PARCERIA --- */
+/* --- BANNER DE PARCERIA --- */
 .banner-parceria {
   background-color: var(--white);
-  margin-top: -30px;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-top: -28px;
+  border-radius: var(--radius-lg);
+  padding: 18px 24px;
+  box-shadow: var(--shadow-md);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .parceria-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .parceria-item i {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--secondary-color);
+  background: rgba(0, 163, 224, 0.1);
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.parceria-item strong {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  display: block;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.parceria-item p {
+  font-size: 0.85rem;
+  color: var(--gray-muted);
+  margin: 0;
+  line-height: 1.2;
 }
 
 /* --- SESSÃO SOBRE / METODOLOGIA --- */
 .sobre {
-  padding: 50px 0 40px;
+  padding: 45px 0 35px;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .section-title h2 {
-  font-size: 1.8rem;
+  font-size: 1.65rem;
   color: var(--primary-color);
+  margin-bottom: 6px;
 }
 
 .section-title p {
-  color: #666;
-  font-size: 0.95rem;
+  color: var(--gray-muted);
+  font-size: 0.92rem;
 }
 
 .grid-sobre {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 18px;
 }
 
 .card-sobre {
   background: var(--white);
-  padding: 22px;
-  border-radius: 10px;
-  border-top: 4px solid var(--secondary-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  padding: 24px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   text-align: center;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-sobre i {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--accent-color);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  display: inline-block;
 }
 
 .card-sobre h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
   color: var(--primary-color);
 }
 
-/* --- SESSÃO TIO MARQUINHOS E COMISSÃO --- */
+.card-sobre p {
+  font-size: 0.9rem;
+  color: var(--gray-muted);
+}
+
+/* --- SESSÃO TIO MARQUINHOS --- */
 .lideranca {
   background-color: var(--white);
-  padding: 50px 0;
+  padding: 45px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .grid-lideranca {
@@ -225,46 +285,46 @@ header {
 .fotos-equipe {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
 .foto-marquinhos,
 .foto-comissao {
   width: 100%;
-  height: auto;
-  max-height: 250px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .info-lideranca h2 {
   color: var(--primary-color);
-  margin-bottom: 15px;
-  font-size: 1.8rem;
+  margin-bottom: 12px;
+  font-size: 1.65rem;
 }
 
 .info-lideranca p {
   margin-bottom: 12px;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  color: #334155;
 }
 
 /* --- GALERIA DE FOTOS --- */
 .galeria {
-  padding: 50px 0 40px;
+  padding: 45px 0 35px;
 }
 
 .grid-galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 12px;
 }
 
 .galeria-item {
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  height: 160px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 1 / 1;
+  box-shadow: var(--shadow-sm);
 }
 
 .galeria-item img {
@@ -273,83 +333,149 @@ header {
   object-fit: cover;
 }
 
-/* --- FINAL CTA SECTION --- */
-.final-cta {
-  background-color: #ebf7ff;
-  padding: 45px 0;
+/* --- SESSÃO INSTAGRAM --- */
+.instagram-cta {
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark) 0%,
+    var(--primary-color) 100%
+  );
+  color: var(--white);
   text-align: center;
-  border-top: 1px solid #d0e8f9;
+  padding: 45px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instagram-cta i {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  color: #e1306c;
+  display: inline-block;
+}
+
+.instagram-cta h2 {
+  font-size: 1.45rem;
+  margin-bottom: 8px;
+}
+
+.instagram-cta p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+/* --- SESSÃO FINAL CTA --- */
+.final-cta {
+  background-color: var(--white);
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
 }
 
 .final-cta h2 {
   color: var(--primary-color);
-  font-size: 1.7rem;
+  font-size: 1.75rem;
   margin-bottom: 10px;
 }
 
 .final-cta p {
-  margin-bottom: 20px;
-  color: #444;
+  color: var(--gray-muted);
+  font-size: 1rem;
+  margin-bottom: 24px;
 }
 
-/* --- SESSÃO INSTAGRAM --- */
-.instagram-cta {
-  background-color: var(--primary-color);
+.btn-cta-main {
+  background-color: #25d366;
   color: var(--white);
-  text-align: center;
-  padding: 45px 0;
+  font-size: 1.05rem;
+  padding: 16px 32px;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
 }
 
-.instagram-cta i {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
+.btn-cta-main:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
 }
 
-.instagram-cta h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+@media (max-width: 768px) {
+  .final-cta {
+    padding: 35px 16px;
+  }
+
+  .final-cta h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn-cta-main {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
 }
 
 /* --- RODAPÉ --- */
 footer {
-  background-color: #001a3a;
-  color: var(--white);
-  padding: 20px 0;
+  background-color: #020617;
+  color: #64748b;
+  padding: 22px 0;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 /* --- BOTÃO FLUTUANTE WHATSAPP --- */
 .whatsapp-float {
   position: fixed;
-  width: 55px;
-  height: 55px;
-  bottom: 20px;
+  width: 58px;
+  height: 58px;
+  bottom: 22px;
   right: 20px;
   background-color: #25d366;
   color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 28px;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  font-size: 30px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:active {
+  transform: scale(0.92);
 }
 
 /* --- RESPONSIVIDADE CELULAR --- */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
   .hero {
-    padding: 40px 0 60px;
+    padding: 35px 0 50px;
   }
 
   .hero h1 {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
+    line-height: 1.3;
   }
 
   .hero p {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+  }
+
+  .banner-parceria {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 16px;
+    margin-top: -22px;
+  }
+
+  .parceria-item {
+    gap: 14px;
+    width: 100%;
   }
 
   .grid-lideranca {
@@ -358,32 +484,37 @@ footer {
   }
 
   .fotos-equipe {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
   .foto-marquinhos,
   .foto-comissao {
-    height: 140px;
-  }
-
-  .banner-parceria {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    height: 150px;
+    border-radius: 10px;
   }
 
   .grid-galeria {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .galeria-item {
-    height: 140px;
+    border-radius: 10px;
   }
 
   .sobre,
   .lideranca,
   .galeria {
-    padding: 35px 0;
+    padding: 32px 0;
+  }
+
+  .section-title {
+    margin-bottom: 20px;
+  }
+
+  .section-title h2 {
+    font-size: 1.4rem;
   }
 }
