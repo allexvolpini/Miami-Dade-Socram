@@ -321,6 +321,38 @@ header {
   gap: 18px;
 }
 
+.bloco-metodologia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.foto-metodologia {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.lista-metodologia {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item-metodologia h3 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+.item-metodologia p {
+  font-size: 0.92rem;
+  color: var(--gray-muted);
+}
+
 .card-sobre {
   background: var(--white);
   padding: 24px 20px;
@@ -670,6 +702,11 @@ footer {
   }
 
   .grid-lideranca {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bloco-metodologia {
     grid-template-columns: 1fr;
     gap: 20px;
   }
