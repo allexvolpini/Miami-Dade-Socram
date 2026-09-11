@@ -462,6 +462,19 @@ header {
   margin-bottom: 20px;
 }
 
+.instagram-handle {
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.instagram-handle:hover {
+  color: var(--secondary-color);
+}
+
 /* --- SESSÃO FINAL CTA --- */
 .final-cta {
   background-color: var(--white);
