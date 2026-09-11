@@ -90,6 +90,27 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.site-nav a {
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: var(--secondary-color);
 }
 
 .logo {
@@ -570,6 +591,10 @@ footer {
 
   .hero-actions {
     width: 100%;
+  }
+
+  .site-nav {
+    display: none;
   }
 
   .banner-parceria {
