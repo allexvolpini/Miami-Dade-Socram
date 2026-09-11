@@ -2,7 +2,10 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Miami Dade Socram - Escolinha de Futebol Infantil</title>
 
     <!-- Google Fonts & Font Awesome Icons -->
@@ -15,8 +18,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Arquivo CSS Externo -->
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Arquivo CSS Externo com versão para limpar cache -->
+    <link rel="stylesheet" href="styles.css?v=2.0" />
   </head>
   <body>
     <!-- CABEÇALHO -->
@@ -153,7 +156,7 @@
       </div>
     </section>
 
-    <!-- GALERIA DE FOTOS -->
+    <!-- GALERIA DE FOTOS COM CLICK DIRETO (ONCLICK) -->
     <section class="galeria">
       <div class="container">
         <div class="section-title">
@@ -161,31 +164,31 @@
           <p>Confira alguns momentos dos nossos treinos</p>
         </div>
         <div class="grid-galeria">
-          <div class="galeria-item">
+          <div class="galeria-item" onclick="openLightbox(0)">
             <img src="images/time1.jpg.jpg" alt="Troféu e Comemoração" />
           </div>
-          <div class="galeria-item">
+          <div class="galeria-item" onclick="openLightbox(1)">
             <img src="images/time2.jpg.jpg" alt="Equipe em Campo" />
           </div>
-          <div class="galeria-item">
+          <div class="galeria-item" onclick="openLightbox(2)">
             <img
               src="images/f8bca79a-5be5-454e-b945-20662b02797c.jpg"
               alt="Time com Troféu"
             />
           </div>
-          <div class="galeria-item">
+          <div class="galeria-item" onclick="openLightbox(3)">
             <img
               src="images/8b0ed094-bade-4448-b3f8-582f9a860824.jpg"
               alt="Treino Society"
             />
           </div>
-          <div class="galeria-item">
+          <div class="galeria-item" onclick="openLightbox(4)">
             <img
               src="images/f73b1dd9-9f6f-403f-a6e0-5795eef28054.jpg"
               alt="Atletas Infantil"
             />
           </div>
-          <div class="galeria-item">
+          <div class="galeria-item" onclick="openLightbox(5)">
             <img
               src="images/2dc29124-0d15-4ff8-91cf-891b5aba9d69.jpg"
               alt="Equipe Uniformizada"
@@ -244,7 +247,7 @@
 
     <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a
-      href="https://wa.me/5535991764266?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita."
+      href="https://wa.me/5535999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita."
       class="whatsapp-float btn-whatsapp-action"
       target="_blank"
       aria-label="Contato via WhatsApp"
@@ -254,19 +257,27 @@
 
     <!-- MODAL DA GALERIA (LIGHTBOX) -->
     <div id="lightbox-modal" class="lightbox">
-      <span class="lightbox-close">&times;</span>
-      <button class="lightbox-prev" aria-label="Foto anterior">
+      <span class="lightbox-close" onclick="closeModal()">&times;</span>
+      <button
+        class="lightbox-prev"
+        onclick="prevImage(event)"
+        aria-label="Foto anterior"
+      >
         <i class="fas fa-chevron-left"></i>
       </button>
       <div class="lightbox-content">
         <img id="lightbox-img" src="" alt="Foto ampliada" />
       </div>
-      <button class="lightbox-next" aria-label="Próxima foto">
+      <button
+        class="lightbox-next"
+        onclick="nextImage(event)"
+        aria-label="Próxima foto"
+      >
         <i class="fas fa-chevron-right"></i>
       </button>
     </div>
 
-    <!-- Arquivo JavaScript Externo -->
-    <script src="script.js"></script>
+    <!-- Arquivo JavaScript com parâmetro para forçar atualização no celular -->
+    <script src="script.js?v=2.0"></script>
   </body>
 </html>

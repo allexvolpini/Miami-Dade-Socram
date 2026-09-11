@@ -1,111 +1,85 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Elementos do Modal e Galeria
-  const galleryItems = document.querySelectorAll(".galeria-item");
+let currentIndex = 0;
+let imagesList = [];
+
+function initGallery() {
+  const items = document.querySelectorAll(".galeria-item img");
+  imagesList = Array.from(items).map((img) => img.src);
+}
+
+function openLightbox(index) {
+  if (imagesList.length === 0) initGallery();
+  
+  currentIndex = index;
   const lightbox = document.getElementById("lightbox-modal");
   const lightboxImg = document.getElementById("lightbox-img");
-  const closeBtn = document.querySelector(".lightbox-close");
-  const prevBtn = document.querySelector(".lightbox-prev");
-  const nextBtn = document.querySelector(".lightbox-next");
 
-  if (!galleryItems.length || !lightbox || !lightboxImg) return;
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = imagesList[currentIndex];
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+}
 
-  let currentIndex = 0;
-  // Captura as URLs das imagens dentro das divs
-  const imagesList = Array.from(galleryItems).map((item) => {
-    const img = item.querySelector("img");
-    return img ? img.src : "";
-  });
-
-  function showImage(index) {
+function showImage(index) {
+  const lightboxImg = document.getElementById("lightbox-img");
+  if (lightboxImg && imagesList[index]) {
     lightboxImg.src = imagesList[index];
   }
+}
 
-  // Clique/Toque nos itens da galeria (Funciona em PC e Celular)
-  galleryItems.forEach((item, index) => {
-    item.addEventListener("click", function (e) {
-      e.preventDefault();
-      currentIndex = index;
-      showImage(currentIndex);
-      lightbox.classList.add("active");
-      document.body.style.overflow = "hidden";
-    });
-  });
+function nextImage(e) {
+  if (e) e.stopPropagation();
+  currentIndex = (currentIndex + 1) % imagesList.length;
+  showImage(currentIndex);
+}
 
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % imagesList.length;
-    showImage(currentIndex);
-  }
+function prevImage(e) {
+  if (e) e.stopPropagation();
+  currentIndex = (currentIndex - 1 + imagesList.length) % imagesList.length;
+  showImage(currentIndex);
+}
 
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + imagesList.length) % imagesList.length;
-    showImage(currentIndex);
-  }
-
-  function closeModal() {
+function closeModal() {
+  const lightbox = document.getElementById("lightbox-modal");
+  if (lightbox) {
     lightbox.classList.remove("active");
     document.body.style.overflow = "auto";
   }
+}
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      nextImage();
+document.addEventListener("DOMContentLoaded", function () {
+  initGallery();
+
+  const lightbox = document.getElementById("lightbox-modal");
+  if (lightbox) {
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox || e.target.classList.contains("lightbox-content")) {
+        closeModal();
+      }
     });
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      prevImage();
-    });
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeModal);
-  }
-
-  lightbox.addEventListener("click", function (e) {
-    if (e.target === lightbox || e.target.classList.contains("lightbox-content")) {
-      closeModal();
-    }
-  });
-
-  // Navegação pelo teclado
+  // Teclado
   document.addEventListener("keydown", function (e) {
-    if (!lightbox.classList.contains("active")) return;
+    if (!lightbox || !lightbox.classList.contains("active")) return;
     if (e.key === "Escape") closeModal();
     if (e.key === "ArrowRight") nextImage();
     if (e.key === "ArrowLeft") prevImage();
   });
 
-  // --- SUPORTE A GESTOS (SWIPE) NO CELULAR ---
+  // Gestos no celular (Swipe)
   let touchStartX = 0;
   let touchEndX = 0;
 
-  lightbox.addEventListener(
-    "touchstart",
-    function (e) {
+  if (lightbox) {
+    lightbox.addEventListener("touchstart", function (e) {
       touchStartX = e.changedTouches[0].screenX;
-    },
-    { passive: true }
-  );
+    }, { passive: true });
 
-  lightbox.addEventListener(
-    "touchend",
-    function (e) {
+    lightbox.addEventListener("touchend", function (e) {
       touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    },
-    { passive: true }
-  );
-
-  function handleSwipe() {
-    const swipeThreshold = 50; // Distância mínima para registrar o deslize
-    if (touchEndX < touchStartX - swipeThreshold) {
-      nextImage(); // Deslizou para a esquerda (próxima)
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-      prevImage(); // Deslizou para a direita (anterior)
-    }
+      if (touchEndX < touchStartX - 40) nextImage();
+      if (touchEndX > touchStartX + 40) prevImage();
+    }, { passive: true });
   }
 });
