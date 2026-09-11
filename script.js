@@ -82,4 +82,16 @@ document.addEventListener("DOMContentLoaded", function () {
       if (touchEndX > touchStartX + 40) prevImage();
     }, { passive: true });
   }
+
+  const fab = document.querySelector(".whatsapp-float");
+  const finalCta = document.querySelector(".final-cta");
+  if (fab && finalCta && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        fab.classList.toggle("is-hidden", entries[0].isIntersecting);
+      },
+      { threshold: 0.35 }
+    );
+    observer.observe(finalCta);
+  }
 });

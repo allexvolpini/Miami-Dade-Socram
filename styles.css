@@ -572,6 +572,11 @@ footer {
   transform: scale(0.92);
 }
 
+.whatsapp-float.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* --- LIGHTBOX / MODAL DA GALERIA --- */
 .lightbox {
   display: none;
@@ -761,6 +766,14 @@ footer {
     width: 100%;
     padding: 14px 20px;
     font-size: 0.95rem;
+  }
+
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    bottom: 16px;
+    right: 16px;
   }
 
   .lightbox-prev {
