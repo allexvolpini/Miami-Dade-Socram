@@ -1,2 +1,0 @@
-# Miami Dade Socram
-miamidadesocram
