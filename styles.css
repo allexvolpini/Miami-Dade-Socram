@@ -12,6 +12,7 @@
   --radius-md: 12px;
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  --header-offset: 70px;
 }
 
 * {
@@ -38,6 +39,18 @@ h3 {
 
 a {
   text-decoration: none;
+}
+
+html {
+  scroll-padding-top: var(--header-offset);
+}
+
+#metodologia,
+#quem-somos,
+#galeria,
+#contato,
+#na-pratica {
+  scroll-margin-top: var(--header-offset);
 }
 
 .container {
