@@ -1,0 +1,17 @@
+# Só o site entra no Git: index.html, styles.css, script.js, images/, README.md
+
+# Specs e relatório de UX
+specs/
+relatorio-ux/
+Relatorio-Validacao-UX-Design.pdf
+*.pdf
+
+# Pasta duplicada, não é o site
+Miami Dade Socram/
+
+# Dependências e lixo de ambiente
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.cursor/

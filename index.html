@@ -2,11 +2,9 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Miami Dade Socram - Escolinha de Futebol Infantil</title>
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg" />
 
     <!-- Google Fonts & Font Awesome Icons -->
     <link
@@ -19,7 +17,7 @@
     />
 
     <!-- Arquivo CSS Externo com versão para limpar cache -->
-    <link rel="stylesheet" href="styles.css?v=2.0" />
+    <link rel="stylesheet" href="styles.css?v=3.7" />
   </head>
   <body>
     <!-- CABEÇALHO -->
@@ -27,12 +25,18 @@
       <div class="container nav-container">
         <div class="logo">
           <img
-            src="images/logo.jpg.jpg"
+            src="images/logo.jpg"
             alt="Logo Miami Dade Socram"
             class="logo-img"
           />
           <span>Miami Dade</span> Socram
         </div>
+        <nav class="site-nav" aria-label="Seções do site">
+          <a href="#metodologia">Metodologia</a>
+          <a href="#quem-somos">Quem somos</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#contato">Contato</a>
+        </nav>
         <div class="nav-socials">
           <a
             href="https://instagram.com/miamidadesocram"
@@ -43,9 +47,10 @@
           <a
             href="https://wa.me/5535991764266?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita."
             target="_blank"
+            rel="noopener noreferrer"
             id="nav-phone"
-            aria-label="Telefone"
-            ><i class="fas fa-phone"></i
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
           ></a>
         </div>
       </div>
@@ -60,6 +65,17 @@
           Liderança, disciplina, trabalho em equipe e diversão com o Tio
           Marquinhos.
         </p>
+        <div class="hero-actions">
+          <a
+            href="https://wa.me/5535991764266?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-cta-main"
+          >
+            <i class="fab fa-whatsapp"></i> Agendar aula experimental
+          </a>
+          <a href="#galeria" class="hero-link-galeria">Ver fotos</a>
+        </div>
       </div>
     </section>
 
@@ -83,8 +99,34 @@
       </div>
     </div>
 
+    <section id="na-pratica" class="na-pratica">
+      <div class="container">
+        <div class="section-title">
+          <h2>Na prática</h2>
+        </div>
+        <div class="grid-pratica">
+          <div class="pratica-item">
+            <strong>Onde</strong>
+            <p>A confirmar no WhatsApp</p>
+          </div>
+          <div class="pratica-item">
+            <strong>Quando</strong>
+            <p>A confirmar no WhatsApp</p>
+          </div>
+          <div class="pratica-item">
+            <strong>Idade</strong>
+            <p>Crianças de 5 a 12 anos</p>
+          </div>
+          <div class="pratica-item">
+            <strong>Aula experimental</strong>
+            <p>Gratuita — agende pelo WhatsApp</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- METODOLOGIA / VALORES -->
-    <section class="sobre">
+    <section id="metodologia" class="sobre">
       <div class="container">
         <div class="section-title">
           <h2>Nossa Metodologia de Ensino</h2>
@@ -93,51 +135,43 @@
             físico do seu filho.
           </p>
         </div>
-        <div class="grid-sobre">
-          <div class="card-sobre">
-            <i class="fas fa-heart"></i>
-            <h3>Crescimento Fora de Campo</h3>
-            <p>
-              Inculcamos valores essenciais como respeito, empatia,
-              companheirismo e disciplina para a vida diária.
-            </p>
-          </div>
-          <div class="card-sobre">
-            <i class="fas fa-futbol"></i>
-            <h3>Fundamentos do Futebol</h3>
-            <p>
-              Treinos técnicos e táticos adaptados para cada faixa etária de
-              forma lúdica e eficiente.
-            </p>
-          </div>
-          <div class="card-sobre">
-            <i class="fas fa-users"></i>
-            <h3>Espaço Seguro e Acolhedor</h3>
-            <p>
-              Ambiente focado no bem-estar, na sociabilização e no apoio
-              constante de treinadores capacitados.
-            </p>
+        <div class="bloco-metodologia">
+          <img
+            src="images/8b0ed094-bade-4448-b3f8-582f9a860824.jpg"
+            alt="Treino da escolinha em campo"
+            class="foto-metodologia"
+          />
+          <div class="lista-metodologia">
+            <div class="item-metodologia">
+              <h3>Crescimento Fora de Campo</h3>
+              <p>
+                As crianças aprendem respeito, empatia, companheirismo e
+                disciplina para o dia a dia.
+              </p>
+            </div>
+            <div class="item-metodologia">
+              <h3>Fundamentos do Futebol</h3>
+              <p>
+                Treinos técnicos e táticos adaptados para cada faixa etária de
+                forma lúdica e eficiente.
+              </p>
+            </div>
+            <div class="item-metodologia">
+              <h3>Espaço Seguro e Acolhedor</h3>
+              <p>
+                Ambiente focado no bem-estar, na sociabilização e no apoio
+                constante de treinadores capacitados.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SOBRE O TIO MARQUINHOS E COMISSÃO -->
-    <section class="lideranca">
+    <section id="quem-somos" class="lideranca">
       <div class="container">
         <div class="grid-lideranca">
-          <div class="fotos-equipe">
-            <img
-              src="images/comissao.jpg.jpg"
-              alt="Tio Marquinhos com Alunos"
-              class="foto-marquinhos"
-            />
-            <img
-              src="images/treinadores.jpg.jpg"
-              alt="Comissão Técnica Miami Dade Socram"
-              class="foto-comissao"
-            />
-          </div>
           <div class="info-lideranca">
             <h2>Liderança do Tio Marquinhos</h2>
             <p>
@@ -152,48 +186,53 @@
               emocional e social dos pequenos atletas.
             </p>
           </div>
+          <img
+            src="images/comissao.jpg"
+            alt="Comissão técnica Miami Dade Socram"
+            class="foto-marquinhos"
+          />
         </div>
       </div>
     </section>
 
     <!-- GALERIA DE FOTOS COM CLICK DIRETO (ONCLICK) -->
-    <section class="galeria">
+    <section id="galeria" class="galeria">
       <div class="container">
         <div class="section-title">
           <h2>Galeria de fotos</h2>
           <p>Confira alguns momentos dos nossos treinos</p>
         </div>
         <div class="grid-galeria">
-          <div class="galeria-item" onclick="openLightbox(0)">
-            <img src="images/time1.jpg.jpg" alt="Troféu e Comemoração" />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(1)">
-            <img src="images/time2.jpg.jpg" alt="Equipe em Campo" />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(2)">
+          <button type="button" class="galeria-item" data-index="0">
+            <img src="images/time1.jpg" alt="Troféu e Comemoração" />
+          </button>
+          <button type="button" class="galeria-item" data-index="1">
+            <img src="images/time2.jpg" alt="Equipe em Campo" />
+          </button>
+          <button type="button" class="galeria-item" data-index="2">
             <img
               src="images/f8bca79a-5be5-454e-b945-20662b02797c.jpg"
               alt="Time com Troféu"
             />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(3)">
+          </button>
+          <button type="button" class="galeria-item" data-index="3">
             <img
               src="images/8b0ed094-bade-4448-b3f8-582f9a860824.jpg"
               alt="Treino Society"
             />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(4)">
+          </button>
+          <button type="button" class="galeria-item" data-index="4">
             <img
               src="images/f73b1dd9-9f6f-403f-a6e0-5795eef28054.jpg"
               alt="Atletas Infantil"
             />
-          </div>
-          <div class="galeria-item" onclick="openLightbox(5)">
+          </button>
+          <button type="button" class="galeria-item" data-index="5">
             <img
               src="images/2dc29124-0d15-4ff8-91cf-891b5aba9d69.jpg"
               alt="Equipe Uniformizada"
             />
-          </div>
+          </button>
         </div>
       </div>
     </section>
@@ -211,7 +250,8 @@
         <a
           href="https://instagram.com/miamidadesocram"
           target="_blank"
-          class="btn btn-secondary"
+          rel="noopener noreferrer"
+          class="instagram-handle"
         >
           @miamidadesocram
         </a>
@@ -219,18 +259,18 @@
     </section>
 
     <!-- BOTÃO CTA DE FECHAMENTO -->
-    <section class="final-cta">
+    <section id="contato" class="final-cta">
       <div class="container">
         <h2>Garanta a vaga do seu filho hoje mesmo!</h2>
         <p>
           Venha conhecer nossa estrutura e faça uma aula experimental gratuita.
         </p>
         <a
-          href="https://wa.me/5535999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita."
+          href="https://wa.me/5535991764266?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita."
           target="_blank"
           class="btn btn-cta-main btn-whatsapp-action"
         >
-          <i class="fab fa-whatsapp"></i> Agendar Aula Experimental
+          <i class="fab fa-whatsapp"></i> Agendar aula experimental
         </a>
       </div>
     </section>
@@ -238,6 +278,21 @@
     <!-- RODAPÉ -->
     <footer>
       <div class="container">
+        <p>Escolinha de futebol infantil</p>
+        <p class="footer-links">
+          <a
+            href="https://wa.me/5535991764266?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita."
+            target="_blank"
+            rel="noopener noreferrer"
+            >WhatsApp</a
+          >
+          <a
+            href="https://instagram.com/miamidadesocram"
+            target="_blank"
+            rel="noopener noreferrer"
+            >@miamidadesocram</a
+          >
+        </p>
         <p>
           &copy; 2026 Miami Dade Socram - Escolinha de Futebol Infantil. Todos
           os direitos reservados.
@@ -247,7 +302,7 @@
 
     <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a
-      href="https://wa.me/5535999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita."
+      href="https://wa.me/5535991764266?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20gratuita."
       class="whatsapp-float btn-whatsapp-action"
       target="_blank"
       aria-label="Contato via WhatsApp"
@@ -256,8 +311,20 @@
     </a>
 
     <!-- MODAL DA GALERIA (LIGHTBOX) -->
-    <div id="lightbox-modal" class="lightbox">
-      <span class="lightbox-close" onclick="closeModal()">&times;</span>
+    <div
+      id="lightbox-modal"
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Foto ampliada"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        aria-label="Fechar"
+      >
+        &times;
+      </button>
       <button
         class="lightbox-prev"
         onclick="prevImage(event)"
@@ -278,6 +345,6 @@
     </div>
 
     <!-- Arquivo JavaScript com parâmetro para forçar atualização no celular -->
-    <script src="script.js?v=2.0"></script>
+    <script src="script.js?v=2.3"></script>
   </body>
 </html>
